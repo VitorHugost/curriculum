@@ -22,6 +22,14 @@ li{
     margin:  5px;
     color: #ffffff;
 }
+.imagens{
+    display: inline;
+    overflow: hidden;
+}
+.imagens:hover img{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.5) rotate(-45deg);
+}
 
 .aside1{
     box-sizing: border-box;
@@ -33,10 +41,12 @@ li{
     left: 55%;
     color: #ffffff;
     padding: 2%;
+    overflow: hidden;
 }
-.aside1::after{
-    
+.aside1:hover{
+ 
 }
+
 
 .headers {color: #ffffff;}
 
