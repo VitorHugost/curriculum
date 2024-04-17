@@ -12,31 +12,30 @@ import { ListInfo } from "../ListInfo";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { ListContact } from "../ListContact";
+import { ContactList } from "../ListContact";
 
 export function Header() {
   return (
-    <header className="bg-gradient-to-t bg-gray-950 from-slate-900 lg:px-14 gap-28 px-8">
-      <section className="flex flex-wrap h-full items-center justify-center">
-        <div className="w-[600px] ">
+    <header className="bg-gradient-to-t bg-gray-950 from-slate-900  ">
+      <section className="lg:mx-36 py-12 flex flex-wrap ">
+
+        <div className="lg:w-2/3  px-4">
           <HeaderTextComponent className="mb-4" />
-          <ListInfo label="vitor.ribeiro.ro.pb@gmail.com" Icon={Envelope} />
-          <ListInfo label="(+55) 69 98161-4659" Icon={WhatsappFill} />
-          <ListInfo label="Pimenta Bueno, Rondônia" Icon={Location} />
-          <div className="flex gap-3 my-4">
-            <ListContact
+          <ListInfoCombo />
+          <ContactList.Root>
+            <ContactList.ContactItem
               Icon={InstagramFill}
               href="https://www.instagram.com/vitor__hugo111/"
             />
-            <ListContact
+            <ContactList.ContactItem
               Icon={GithubFill}
               href="https://github.com/VitorHugost"
             />
-            <ListContact
+            <ContactList.ContactItem
               Icon={LinkedinFill}
               href="https://www.linkedin.com/in/vitor-hugo-ferreira-ribeiro-635079240/"
             />
-          </div>
+          </ContactList.Root>
         </div>
         <AvatarComponent className="flex flex-1 justify-center" />
       </section>
@@ -65,10 +64,21 @@ function HeaderTextComponent({ ...rest }: ComponentProps<"div">) {
 function AvatarComponent({ ...rest }: ComponentProps<"div">) {
   return (
     <div {...rest}>
-      <Avatar className="h-30 w-96 border-8 border-black">
+      <Avatar className="h-30 min-w-80 border-8 border-black">
         <AvatarImage src="https://github.com/Vitorhugost.png" />
         <AvatarFallback>Me image</AvatarFallback>
       </Avatar>
     </div>
   );
+}
+
+function ListInfoCombo() {
+  return (
+    <>
+      <ListInfo label="vitor.ribeiro.ro.pb@gmail.com" Icon={Envelope} />
+      <ListInfo label="(+55) 69 98161-4659" Icon={WhatsappFill} />
+      <ListInfo label="Pimenta Bueno, Rondônia" Icon={Location} />
+    </>
+  )
+
 }
