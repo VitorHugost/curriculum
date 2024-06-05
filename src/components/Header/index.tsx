@@ -14,6 +14,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { ContactList } from "../ListContact";
 
+import MeImage from '../../assets/imgs/eu.jpg'
+
 export function Header() {
   return (
     <header className="bg-gradient-to-t bg-gray-950 from-slate-900  ">
@@ -65,7 +67,7 @@ function AvatarComponent({ ...rest }: ComponentProps<"div">) {
   return (
     <div {...rest}>
       <Avatar className="h-30 min-w-80 border-8 border-black">
-        <AvatarImage src="https://github.com/Vitorhugost.png" />
+        <AvatarImage src={MeImage.src} />
         <AvatarFallback>Me image</AvatarFallback>
       </Avatar>
     </div>
